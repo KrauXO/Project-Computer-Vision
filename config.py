@@ -8,7 +8,7 @@ TELEGRAM_BOT_TOKEN = "ISI_TOKEN"
 TELEGRAM_CHAT_ID = "ISI_CHAT_ID"
 ALERT_COOLDOWN_SECONDS = 10
 
-# Produk Uji: AHH (Kuning), Beng-Beng (Merah), Oreo (Biru)
+# Produk Uji: AHH (Kuning), Choco Pie (Merah Marun), Oreo (Biru)
 INITIAL_INVENTORY = {
     "AHH (Kuning)": {
         "stock": 0,
@@ -22,19 +22,19 @@ INITIAL_INVENTORY = {
         ],
         "min_contour_area": 1600,
     },
-    "Beng-Beng (Merah)": {
+    "Choco Pie (Merah)": {
         "stock": 0,
         "max_capacity": 6,
         "min_threshold": 2,
-        "price": 2500,
+        "price": 3000,
         "roi": (355, 140, 250, 260),
         "theme_color": (0, 0, 255),
-        # Merah murni kemasan Beng-Beng:
-        # Hue 0-6 & 170-180 (membuang kulit manusia yang berada di Hue 10-22)
-        # Saturation 100-255 (menangkap foil metalik tanpa menangkap kulit pucat)
+        # HSV Merah Marun Lotte Choco Pie:
+        # Hue 0-7 & 170-180 (membuang rona kulit tangan di Hue 10-22)
+        # Saturation 85-255 & Value 45-255 (menangkap merah marun pekat)
         "hsv_ranges": [
-            ((0, 100, 60), (6, 255, 255)),
-            ((170, 100, 60), (180, 255, 255))
+            ((0, 85, 45), (7, 255, 255)),
+            ((170, 85, 45), (180, 255, 255))
         ],
         "min_contour_area": 1600,
     },

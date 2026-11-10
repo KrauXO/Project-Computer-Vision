@@ -20,12 +20,12 @@ Sistem menggunakan alur pemrosesan citra klasik (*classical computer vision*) ya
 
 1. **Region of Interest (ROI) Partitioning**  
    Area tangkapan kamera dibagi menjadi 3 zona produk:
-   - **Zona Kiri:** Pilus Garuda (Kemasan Hijau)
-   - **Zona Tengah:** Beng-Beng (Kemasan Merah)
-   - **Zona Kanan:** Slai O'Lai (Kemasan Biru)
+   - **Zona Kiri:** AHH Nabati (Kemasan Kuning Keju)
+   - **Zona Tengah:** Lotte Choco Pie (Kemasan Merah Marun)
+   - **Zona Kanan:** Oreo Original (Kemasan Biru)
 
 2. **Segmentasi Warna HSV (`cv2.cvtColor` + `cv2.inRange`)**  
-   Warna kemasan diisolasi pada ruang warna HSV untuk memisahkan komponen warna (*Hue*) dari intensitas pencahayaan (*Value*). Hal ini membuat deteksi tahan terhadap bayangan meja dan tidak salah mendeteksi warna kulit tangan saat mengambil barang.
+   Warna kemasan diisolasi pada ruang warna HSV untuk memisahkan komponen warna (*Hue*) dari intensitas pencahayaan (*Value*). Khusus zona tengah Choco Pie, rentang Hue dikunci di $0 - 7$ dan $170 - 180$ dengan saturasi tinggi ($S \ge 85$), sehingga rona kulit tangan manusia (Hue $10 - 22$) otomatis tereliminasi dan tangan tidak salah terhitung sebagai barang.
 
 3. **Pembersihan Morfologi (`MORPH_OPEN` & `MORPH_CLOSE`)**  
    Menutup celah grafis teks/logo pada kemasan dan menghilangkan derau bintik kecil pada latar belakang.

@@ -17,7 +17,7 @@ def draw_hud(frame, debug_vis, inventory_state, notifier, fps):
     cv2.rectangle(frame, (0, 0), (w, 65), (20, 22, 28), -1)
     cv2.putText(frame, "SMART INVENTORY SEKRE HMIF", (20, 28),
                 cv2.FONT_HERSHEY_SIMPLEX, 0.68, (0, 240, 190), 2)
-    cv2.putText(frame, f"AHH (Kuning) | Beng-Beng (Merah) | Oreo (Biru) | FPS: {fps:.1f} | [Q] Keluar",
+    cv2.putText(frame, f"AHH (Kuning) | Choco Pie (Merah) | Oreo (Biru) | FPS: {fps:.1f} | [Q] Keluar",
                 (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.44, (190, 200, 210), 1)
 
     total_items = 0
