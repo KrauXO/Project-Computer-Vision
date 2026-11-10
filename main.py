@@ -17,7 +17,7 @@ def draw_hud(frame, debug_vis, inventory_state, notifier, fps):
     cv2.rectangle(frame, (0, 0), (w, 65), (20, 22, 28), -1)
     cv2.putText(frame, "SMART INVENTORY SEKRE HMIF", (20, 28),
                 cv2.FONT_HERSHEY_SIMPLEX, 0.68, (0, 240, 190), 2)
-    cv2.putText(frame, f"Pilus (Hijau) | Beng-Beng (Merah) | Slai O'Lai (Biru) | FPS: {fps:.1f} | [Q] Keluar",
+    cv2.putText(frame, f"AHH (Kuning) | Beng-Beng (Merah) | Oreo (Biru) | FPS: {fps:.1f} | [Q] Keluar",
                 (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.44, (190, 200, 210), 1)
 
     total_items = 0
@@ -57,7 +57,7 @@ def draw_hud(frame, debug_vis, inventory_state, notifier, fps):
         cv2.putText(frame, status_txt, (x + 10, y + rh - 12),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.50, border_color, 2)
 
-    # Panel bawah (dibuat tinggi 110px agar cukup menampung mini HSV mask di kanan bawah)
+    # Panel bawah (Valuasi & Log Alert)
     panel_h = 110
     footer_y = h - panel_h
     cv2.rectangle(frame, (0, footer_y), (w, h), (18, 20, 26), -1)
@@ -66,7 +66,6 @@ def draw_hud(frame, debug_vis, inventory_state, notifier, fps):
     status_summary = "PERLU RESTOCK!" if any_low_stock else "STOK AMAN"
     summary_color = (0, 80, 255) if any_low_stock else (0, 230, 110)
 
-    # Teks status & log di sisi kiri panel bawah
     cv2.putText(frame, f"TOTAL: {total_items} pcs | VALUASI: Rp {total_valuation:,} | STATUS: {status_summary}",
                 (20, footer_y + 26), cv2.FONT_HERSHEY_SIMPLEX, 0.52, summary_color, 2)
 
@@ -74,7 +73,7 @@ def draw_hud(frame, debug_vis, inventory_state, notifier, fps):
         cv2.putText(frame, log_msg, (20, footer_y + 54 + i * 22),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.42, (200, 210, 220), 1)
 
-    # Pindahkan mini HSV mask ke pojok kanan bawah (di dalam panel bawah)
+    # Mini HSV mask di pojok kanan bawah
     if debug_vis is not None:
         pip_w, pip_h = 160, 90
         pip_res = cv2.resize(debug_vis, (pip_w, pip_h))
