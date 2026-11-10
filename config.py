@@ -16,12 +16,11 @@ INITIAL_INVENTORY = {
         "min_threshold": 2,
         "price": 1500,
         "roi": (60, 140, 250, 260),
-        "theme_color": (0, 230, 240),    # Kuning cerah
-        # HSV Kuning AHH Nabati (Hue 20 - 38, Saturation pekat)
+        "theme_color": (0, 230, 240),
         "hsv_ranges": [
-            ((20, 110, 80), (38, 255, 255))
+            ((20, 100, 80), (38, 255, 255))
         ],
-        "min_contour_area": 3000,
+        "min_contour_area": 1600,
     },
     "Beng-Beng (Merah)": {
         "stock": 0,
@@ -29,13 +28,15 @@ INITIAL_INVENTORY = {
         "min_threshold": 2,
         "price": 2500,
         "roi": (355, 140, 250, 260),
-        "theme_color": (0, 0, 255),      # Merah
-        # Saturasi dinaikkan ke >= 135 agar kulit tangan manusia (S: 50-110) 100% diabaikan
+        "theme_color": (0, 0, 255),
+        # Merah murni kemasan Beng-Beng:
+        # Hue 0-6 & 170-180 (membuang kulit manusia yang berada di Hue 10-22)
+        # Saturation 100-255 (menangkap foil metalik tanpa menangkap kulit pucat)
         "hsv_ranges": [
-            ((0, 135, 70), (9, 255, 255)),
-            ((168, 135, 70), (180, 255, 255))
+            ((0, 100, 60), (6, 255, 255)),
+            ((170, 100, 60), (180, 255, 255))
         ],
-        "min_contour_area": 3000,
+        "min_contour_area": 1600,
     },
     "Oreo (Biru)": {
         "stock": 0,
@@ -43,12 +44,11 @@ INITIAL_INVENTORY = {
         "min_threshold": 2,
         "price": 2000,
         "roi": (650, 140, 250, 260),
-        "theme_color": (255, 140, 0),    # Biru khas Oreo
-        # HSV Biru Oreo Original (Hue 98 - 130, Saturation pekat)
+        "theme_color": (255, 140, 0),
         "hsv_ranges": [
-            ((98, 110, 60), (130, 255, 255))
+            ((98, 90, 50), (130, 255, 255))
         ],
-        "min_contour_area": 3000,
+        "min_contour_area": 1600,
     },
 }
 
