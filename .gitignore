@@ -1,0 +1,18 @@
+# Virtual Environment Python (Wajib di-ignore agar tidak ikut ter-push)
+.venv/
+env/
+venv/
+ENV/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary & Data Log
+*.log
+inventory_log.csv
+
+# OS Generated
+.DS_Store
+Thumbs.db
