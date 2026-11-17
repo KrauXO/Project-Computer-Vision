@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['Ahh', 'Chocopie', 'Oreo']
+
+roboflow:
+  workspace: saburos-workspace
+  project: inventaris-stok-penjualan-vczc9
+  version: 1
+  license: Private
+  url: https://app.roboflow.com/saburos-workspace/inventaris-stok-penjualan-vczc9/1
