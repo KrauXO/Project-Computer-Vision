@@ -24,7 +24,7 @@ while cap.isOpened():
         break
 
     # Prediksi frame dengan model kustom
-    results = model.predict(frame, conf=0.55, iou=0.60, verbose=False)
+    results = model.predict(frame, conf=0.85, iou=0.60, verbose=False)
     
     current_counts = {cls: 0 for cls in CLASSES}
     for box in results[0].boxes:
